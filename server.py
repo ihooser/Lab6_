@@ -48,7 +48,7 @@ if inputFrom == "udp" or inputFrom == "UDP":
         data, addr = serverSock_UDP.recvfrom(1024)
         time_date = time.asctime(time.localtime(time.time()))
         splitter = data.split()
-        command = splitter[2]
+        command = " ".join(splitter[2:])
         print time_date, "adress: ", addr, "command: ", command , " 'connected'"
         execution_count = int(splitter[0])
         time_delay = int(splitter[1])
