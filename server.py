@@ -75,7 +75,7 @@ if inputFrom == "TCP" or inputFrom == "tcp":
             data = connection.recv(1024)
             time_date = time.asctime(time.localtime(time.time()))
             spliter = data.split()
-            command = spliter[2]
+            command = " ".join(spliter[2])
             # print command
             print time_date, "adress: ", addr, "command: ", command , "connected"
 #             print "data at 0 is: ", spliter[0]
