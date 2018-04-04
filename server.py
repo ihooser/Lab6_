@@ -9,7 +9,7 @@ def commit(execution_count,command,delay):
     print "start time: ", start_time
 #     command = print "print this"
     for x in range (0,execution_count):
-#         os.system(command)
+        os.system(command)
         time.sleep(float(delay))
         
            

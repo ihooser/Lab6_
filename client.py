@@ -16,7 +16,7 @@ serverIP = sys.argv[1]
 serverPort = int(sys.argv[2])
 time_delay = sys.argv[3]
 execute_times = sys.argv[4]
-command = sys.argv[5]
+command = " ".join(sys.argv[5:])
 print "The server IP is:", serverIP
 print "The server Port is:", serverPort
 print "The execution time is: ",execute_times
