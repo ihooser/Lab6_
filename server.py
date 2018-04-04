@@ -9,7 +9,7 @@ def commit(execution_count,command,delay):
     print "start time: ", start_time
 #     command = print "print this"
     for x in range (0,execution_count):
-        os.system(command)
+#         os.system(command)
         time.sleep(float(delay))
         
            
@@ -59,7 +59,6 @@ if inputFrom == "udp" or inputFrom == "UDP":
             serverSock_UDP.sendto(send_Back, addr)
             time_date = time.asctime(time.localtime(time.time()))
             print time.asctime(time.localtime(time.time())), " adress: ", addr, " disconnected"
-            time.sleep(time_delay)
     #     print " the data has been sent out"
 
 
@@ -88,6 +87,5 @@ if inputFrom == "TCP" or inputFrom == "tcp":
             print return_message
             connection.send(return_message)
             print time.asctime(time.localtime(time.time())), " adress: ", addr, " disconnected"
-            time.sleep(time_delay)
             break
 

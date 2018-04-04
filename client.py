@@ -23,7 +23,7 @@ print "The execution time is: ",execute_times
 print "The command that is being executed is: ", command 
 
 #combining all the imformation into one sting to send
-Message = time_delay + " " + execute_times + " " + command
+Message = execute_times + " " + time_delay + " " + command
 
 inputFrom = raw_input('Are you sending data using TCP or UDP:')
 
@@ -46,15 +46,14 @@ if inputFrom == "tcp" or inputFrom == "TCP":
     #setting up the socket
     print "you will be sending a command using TCP"
     clientSock_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    print "tester 1"
     clientSock_tcp.connect((serverIP, serverPort))
-    print "tester" 
     while temp == 0:
-        print "tester" 
         clientSock_tcp.send(Message)
         print "the data that was sent was: "
         print Message
+        data_back = clientSock_tcp.recv(1024)
         break
+    print data_back
     print "the client is now closing"
     clientSock_tcp.close()
 
